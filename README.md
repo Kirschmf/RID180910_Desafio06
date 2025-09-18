@@ -127,12 +127,4 @@ Coleção do **Insomnia** disponível em: [`tests/insomnia-collection.json`](./t
 
 ---
 
-## 👨‍💻 Autor
-
-- **Seu Nome Aqui**  
-- 💼 [LinkedIn](https://www.linkedin.com/in/seu-perfil)  
-- 📧 seuemail@exemplo.com  
-
----
-
 ✨ Projeto desenvolvido para prática de **APIs RESTful**, **MySQL** e **boas práticas de backend**.
