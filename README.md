@@ -111,7 +111,8 @@ Além disso, há um arquivo de seed com dados de exemplo em [`scripts/02-seed-sa
 📊 **Diagrama Entidade-Relacionamento (ERD):**  
 Gerado via [dbdiagram.io](https://dbdiagram.io).  
 
-"C:\Users\makfo\Downloads\Untitled (1).png"
+
+<img width="1195" height="810" alt="Untitled (1)" src="https://github.com/user-attachments/assets/b4761391-4ace-40c3-9ace-1ebc0e191b95" />
 
 ---
 
