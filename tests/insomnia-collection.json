@@ -1,0 +1,349 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-01-15T10:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_health",
+      "parentId": "fld_dncommerce",
+      "_type": "request",
+      "name": "Health Check",
+      "description": "Verificar status da API",
+      "url": "{{ _.base_url }}/api/health",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1640000000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global"
+    },
+    {
+      "_id": "req_produtos_list",
+      "parentId": "fld_produtos",
+      "_type": "request",
+      "name": "Listar Produtos",
+      "description": "Listar todos os produtos com paginação",
+      "url": "{{ _.base_url }}/api/produtos",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_page",
+          "name": "page",
+          "value": "1",
+          "description": "Página"
+        },
+        {
+          "id": "pair_limit",
+          "name": "limit",
+          "value": "10",
+          "description": "Itens por página"
+        },
+        {
+          "id": "pair_categoria",
+          "name": "categoria",
+          "value": "",
+          "description": "Filtrar por categoria",
+          "disabled": true
+        },
+        {
+          "id": "pair_marca",
+          "name": "marca",
+          "value": "",
+          "description": "Filtrar por marca",
+          "disabled": true
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1639000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_produtos_create",
+      "parentId": "fld_produtos",
+      "_type": "request",
+      "name": "Criar Produto",
+      "description": "Criar novo produto",
+      "url": "{{ _.base_url }}/api/produtos",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Produto Teste API\",\n  \"descricao\": \"Produto criado via API\",\n  \"preco\": 49.90,\n  \"categoria\": \"maquiagem\",\n  \"marca\": \"Teste Brand\",\n  \"ativo\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1638000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_produtos_get",
+      "parentId": "fld_produtos",
+      "_type": "request",
+      "name": "Buscar Produto por ID",
+      "description": "Buscar produto específico",
+      "url": "{{ _.base_url }}/api/produtos/1",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1637000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_clientes_list",
+      "parentId": "fld_clientes",
+      "_type": "request",
+      "name": "Listar Clientes",
+      "description": "Listar todos os clientes",
+      "url": "{{ _.base_url }}/api/clientes",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_page",
+          "name": "page",
+          "value": "1"
+        },
+        {
+          "id": "pair_limit",
+          "name": "limit",
+          "value": "10"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1636000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_clientes_create",
+      "parentId": "fld_clientes",
+      "_type": "request",
+      "name": "Criar Cliente",
+      "description": "Criar novo cliente",
+      "url": "{{ _.base_url }}/api/clientes",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Cliente Teste API\",\n  \"email\": \"cliente.teste@email.com\",\n  \"telefone\": \"(11) 99999-8888\",\n  \"endereco\": \"Rua Teste, 123 - São Paulo, SP\",\n  \"ativo\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1635000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_pedidos_list",
+      "parentId": "fld_pedidos",
+      "_type": "request",
+      "name": "Listar Pedidos",
+      "description": "Listar todos os pedidos",
+      "url": "{{ _.base_url }}/api/pedidos",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1634000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_pedidos_create",
+      "parentId": "fld_pedidos",
+      "_type": "request",
+      "name": "Criar Pedido",
+      "description": "Criar novo pedido",
+      "url": "{{ _.base_url }}/api/pedidos",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"cliente_id\": 1,\n  \"itens\": [\n    {\n      \"produto_id\": 1,\n      \"quantidade\": 2,\n      \"preco_unitario\": 45.90\n    },\n    {\n      \"produto_id\": 2,\n      \"quantidade\": 1,\n      \"preco_unitario\": 18.50\n    }\n  ],\n  \"observacoes\": \"Pedido teste via API\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1633000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_vendas_list",
+      "parentId": "fld_vendas",
+      "_type": "request",
+      "name": "Listar Vendas",
+      "description": "Listar todas as vendas",
+      "url": "{{ _.base_url }}/api/vendas",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1632000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_vendas_create",
+      "parentId": "fld_vendas",
+      "_type": "request",
+      "name": "Criar Venda",
+      "description": "Registrar nova venda",
+      "url": "{{ _.base_url }}/api/vendas",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"pedido_id\": 1,\n  \"forma_pagamento\": \"cartao_credito\",\n  \"desconto\": 5.00\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1631000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_estoque_list",
+      "parentId": "fld_estoque",
+      "_type": "request",
+      "name": "Listar Estoque",
+      "description": "Listar todo o estoque",
+      "url": "{{ _.base_url }}/api/estoque",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1630000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "req_estoque_alertas",
+      "parentId": "fld_estoque",
+      "_type": "request",
+      "name": "Alertas de Estoque Baixo",
+      "description": "Produtos com estoque baixo",
+      "url": "{{ _.base_url }}/api/estoque/alertas/baixo",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1629000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "fld_dncommerce",
+      "_type": -1629000000000,
+      "isPrivate": false
+    },
+    {
+      "_id": "fld_dncommerce",
+      "_type": "request_group",
+      "parentId": "wrk_dncommerce",
+      "name": "DNCommerce API",
+      "description": "API do sistema de e-commerce DNCommerce",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1640000000000
+    },
+    {
+      "_id": "fld_produtos",
+      "_type": "request_group",
+      "parentId": "fld_dncommerce",
+      "name": "Produtos",
+      "description": "Endpoints para gerenciar produtos",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1639000000000
+    },
+    {
+      "_id": "fld_clientes",
+      "_type": "request_group",
+      "parentId": "fld_dncommerce",
+      "name": "Clientes",
+      "description": "Endpoints para gerenciar clientes",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1636000000000
+    },
+    {
+      "_id": "fld_pedidos",
+      "_type": "request_group",
+      "parentId": "fld_dncommerce",
+      "name": "Pedidos",
+      "description": "Endpoints para gerenciar pedidos",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1634000000000
+    },
+    {
+      "_id": "fld_vendas",
+      "_type": "request_group",
+      "parentId": "fld_dncommerce",
+      "name": "Vendas",
+      "description": "Endpoints para gerenciar vendas",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1632000000000
+    },
+    {
+      "_id": "fld_estoque",
+      "_type": "request_group",
+      "parentId": "fld_dncommerce",
+      "name": "Estoque",
+      "description": "Endpoints para gerenciar estoque",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1630000000000
+    },
+    {
+      "_id": "wrk_dncommerce",
+      "_type": "workspace",
+      "name": "DNCommerce API",
+      "description": "Workspace para testes da API DNCommerce"
+    },
+    {
+      "_id": "env_base",
+      "_type": "environment",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3000"
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url"]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1640000000000
+    }
+  ]
+}
